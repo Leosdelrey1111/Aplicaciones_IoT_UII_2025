@@ -79,7 +79,7 @@ Los videos deben mostrar lo siguiente para obtener el puntaje completo de 5 punt
 
 📜 *Diagrama del Circuito:*
 ![Diagrama del Circuito](https://wokwi.com/projects/425433971132118017)
-
+- *Diagrama del Circuito:* [Diagrama con Code Wokwik](https://wokwi.com/projects/425433971132118017)
 ---
 
 ## 🎯 Objetivos del Proyecto
