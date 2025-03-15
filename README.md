@@ -74,10 +74,11 @@ Los videos deben mostrar lo siguiente para obtener el puntaje completo de 5 punt
 
 | Integrante                       | Componente              | Imagen |
 |-----------------------------------|-------------------------|--------|
-| Brayan Leonel Hernández Díaz     | Placa fenólica soldada  | <img src="https://github.com/user-attachments/assets/ec6b9e9a-03b5-4001-af4c-5e5eeb8fce43" width="200"> |
+| Brayan Leonel Hernández Díaz     | Placa fenólica soldada  | <img src="https://github.com/user-attachments/assets/c713c1c8-4e07-499e-b8e9-204ed16da0d3" width="200"> |
+| Brayan Leonel Hernández Díaz     | Placa fenólica soldada  | <img src="https://github.com/user-attachments/assets/f2f5b669-de7f-4f16-9916-e6385ea0d2e4" width="200"> |
 
 📜 *Diagrama del Circuito:*
-![Diagrama del Circuito](https://github.com/user-attachments/assets/tu-imagen-diagrama.png)
+![Diagrama del Circuito](https://wokwi.com/projects/425433971132118017)
 
 ---
 
