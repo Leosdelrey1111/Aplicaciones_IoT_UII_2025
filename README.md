@@ -78,7 +78,6 @@ Los videos deben mostrar lo siguiente para obtener el puntaje completo de 5 punt
 | Brayan Leonel Hernández Díaz     | Placa fenólica soldada  | <img src="https://github.com/user-attachments/assets/f2f5b669-de7f-4f16-9916-e6385ea0d2e4" width="200"> |
 
 📜 *Diagrama del Circuito:*
-![Diagrama del Circuito](https://wokwi.com/projects/425433971132118017)
 - *Diagrama del Circuito:* [Diagrama con Code Wokwik](https://wokwi.com/projects/425433971132118017)
 ---
 
