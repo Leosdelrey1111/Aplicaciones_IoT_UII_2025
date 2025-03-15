@@ -1,0 +1,180 @@
+[
+    {
+        "id": "809e75721d014800",
+        "type": "tab",
+        "label": "Flow 5",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1a64693aa67a6dad",
+        "type": "mqtt in",
+        "z": "809e75721d014800",
+        "name": "",
+        "topic": "jajj/temperatura",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "cdeb02a73f30d732",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 140,
+        "wires": [
+            [
+                "fc245748111838ac",
+                "61515999d7e0c899"
+            ]
+        ]
+    },
+    {
+        "id": "fc245748111838ac",
+        "type": "postgresql",
+        "z": "809e75721d014800",
+        "name": "sensor_details",
+        "query": "INSERT INTO sensor_details (sensor_id, user_id, value) VALUES (1,1, {{{msg.payload}}});",
+        "postgreSQLConfig": "3cd515a78cadaa56",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 520,
+        "y": 140,
+        "wires": [
+            [
+                "61515999d7e0c899"
+            ]
+        ]
+    },
+    {
+        "id": "61515999d7e0c899",
+        "type": "debug",
+        "z": "809e75721d014800",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d72bbf4c91df6f98",
+        "type": "mqtt in",
+        "z": "809e75721d014800",
+        "name": "",
+        "topic": "jajj/actuadores",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "cdeb02a73f30d732",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 400,
+        "wires": [
+            [
+                "57197cd37f834df4",
+                "868d21e8b7baf61a"
+            ]
+        ]
+    },
+    {
+        "id": "57197cd37f834df4",
+        "type": "postgresql",
+        "z": "809e75721d014800",
+        "name": "actuator_details",
+        "query": "INSERT INTO actuator_details (actuator_id, user_id, state)VALUES (1,1, {{{msg.payload}}});",
+        "postgreSQLConfig": "3cd515a78cadaa56",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 480,
+        "y": 400,
+        "wires": [
+            [
+                "868d21e8b7baf61a"
+            ]
+        ]
+    },
+    {
+        "id": "868d21e8b7baf61a",
+        "type": "debug",
+        "z": "809e75721d014800",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "cdeb02a73f30d732",
+        "type": "mqtt-broker",
+        "name": "aiotjacky",
+        "broker": "192.168.137.242",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3cd515a78cadaa56",
+        "type": "postgreSQLConfig",
+        "name": "ddi",
+        "host": "localhost",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "aiotjacky",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "utng",
+        "userFieldType": "str",
+        "password": "1234",
+        "passwordFieldType": "str"
+    }
+]

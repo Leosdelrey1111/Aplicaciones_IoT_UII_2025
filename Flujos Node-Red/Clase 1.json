@@ -1,0 +1,857 @@
+[
+    {
+        "id": "b6241fedd6051f99",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9cba030323233181",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(7, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 410,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "59dc174541659f60",
+        "type": "mqtt in",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "topic": "sensores/inclinacion",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "9cba030323233181"
+            ]
+        ]
+    },
+    {
+        "id": "a2efe792c9d7f673",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(9, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 530,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1596f475c9b5cbd3",
+        "type": "mqtt in",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "topic": "sensores/microfonoSencible",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "a2efe792c9d7f673"
+            ]
+        ]
+    },
+    {
+        "id": "1ae78973591c1354",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(13, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 410,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a1a79d1147e9298",
+        "type": "mqtt in",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "topic": "sensor/fototransistor",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 420,
+        "wires": [
+            [
+                "1ae78973591c1354"
+            ]
+        ]
+    },
+    {
+        "id": "905b71a96afea035",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(13, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 370,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ee9d72d26ed842fa",
+        "type": "mqtt in",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "topic": "led/rgb",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 340,
+        "wires": [
+            [
+                "905b71a96afea035"
+            ]
+        ]
+    },
+    {
+        "id": "bcea2dc2c961c273",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(13, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 390,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "96b7d926bbe68a2b",
+        "type": "mqtt in",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "topic": "sensor/vibracion",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 520,
+        "wires": [
+            [
+                "bcea2dc2c961c273"
+            ]
+        ]
+    },
+    {
+        "id": "f6beda2cf811c920",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(15, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 370,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "990285768119b495",
+        "type": "mqtt in",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "topic": "blhd/sensor/temp-digital",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 600,
+        "wires": [
+            [
+                "f6beda2cf811c920"
+            ]
+        ]
+    },
+    {
+        "id": "c4a7ae4e38c95c46",
+        "type": "inject",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 680,
+        "wires": [
+            [
+                "aad4305758fd9a08"
+            ]
+        ]
+    },
+    {
+        "id": "aad4305758fd9a08",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 15;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 250,
+        "y": 680,
+        "wires": [
+            [
+                "451b6c7f6bda7d14"
+            ]
+        ]
+    },
+    {
+        "id": "451b6c7f6bda7d14",
+        "type": "ui_table",
+        "z": "b6241fedd6051f99",
+        "group": "1b4b7b5292ca5d77",
+        "name": "Sensor de Temperatura",
+        "order": 0,
+        "width": "21",
+        "height": "11",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 510,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "a619746880fa06ac",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(11, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 390,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "480ab8813f9e9fe3",
+        "type": "mqtt in",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "topic": "blhd/sensor/vibracion",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 740,
+        "wires": [
+            [
+                "a619746880fa06ac"
+            ]
+        ]
+    },
+    {
+        "id": "5f82655b3ea52ca7",
+        "type": "inject",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 820,
+        "wires": [
+            [
+                "3c85caf75987ada8"
+            ]
+        ]
+    },
+    {
+        "id": "3c85caf75987ada8",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 11;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 270,
+        "y": 820,
+        "wires": [
+            [
+                "6d8f3a9aaa5c415d"
+            ]
+        ]
+    },
+    {
+        "id": "6d8f3a9aaa5c415d",
+        "type": "ui_table",
+        "z": "b6241fedd6051f99",
+        "group": "1b4b7b5292ca5d77",
+        "name": "Sensor de Vibracion",
+        "order": 0,
+        "width": "21",
+        "height": "11",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 520,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "93a8e19957d897c0",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(10, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 530,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cbd18710de466137",
+        "type": "mqtt in",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "topic": "blhd/sensor/sonido",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 1080,
+        "wires": [
+            [
+                "93a8e19957d897c0",
+                "4cb39867c1a927b5"
+            ]
+        ]
+    },
+    {
+        "id": "896c2ee97c10216c",
+        "type": "inject",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 1160,
+        "wires": [
+            [
+                "f14ce6782b1fa6e0"
+            ]
+        ]
+    },
+    {
+        "id": "f14ce6782b1fa6e0",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 10;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 450,
+        "y": 1160,
+        "wires": [
+            [
+                "945dff5a01b83483"
+            ]
+        ]
+    },
+    {
+        "id": "945dff5a01b83483",
+        "type": "ui_table",
+        "z": "b6241fedd6051f99",
+        "group": "f253b8dc0dc72b7d",
+        "name": "KY-038 Sensor de Sonido Con Microfono",
+        "order": 2,
+        "width": "25",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 720,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "4cb39867c1a927b5",
+        "type": "ui_text",
+        "z": "b6241fedd6051f99",
+        "group": "f253b8dc0dc72b7d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "KY-038 Sensor de Sonido Con Microfono",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 680,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "6c61c529498ce549",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(6, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 490,
+        "y": 1360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "61fb8fcc3857cc33",
+        "type": "mqtt in",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "topic": "blhd/sensor/mercurio",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 1360,
+        "wires": [
+            [
+                "6c61c529498ce549",
+                "b5bb4bdc662ac0ca"
+            ]
+        ]
+    },
+    {
+        "id": "685d907aa1fe5fc7",
+        "type": "inject",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 1440,
+        "wires": [
+            [
+                "963292ebbe788692"
+            ]
+        ]
+    },
+    {
+        "id": "963292ebbe788692",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 6;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 410,
+        "y": 1440,
+        "wires": [
+            [
+                "c2676a894c0fa99a"
+            ]
+        ]
+    },
+    {
+        "id": "c2676a894c0fa99a",
+        "type": "ui_table",
+        "z": "b6241fedd6051f99",
+        "group": "f253b8dc0dc72b7d",
+        "name": "KY-017  Modulo Interruptor de Mercurio ",
+        "order": 4,
+        "width": "25",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 670,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "b5bb4bdc662ac0ca",
+        "type": "ui_text",
+        "z": "b6241fedd6051f99",
+        "group": "f253b8dc0dc72b7d",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "KY-017  Modulo Interruptor de Mercurio ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 630,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "00880eda35869fd4",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(8, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 510,
+        "y": 1640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5b9b083d479e6598",
+        "type": "mqtt in",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "topic": "blhd/sensor/inclinacion_ky020",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 1640,
+        "wires": [
+            [
+                "00880eda35869fd4",
+                "0a0564cbe02af795"
+            ]
+        ]
+    },
+    {
+        "id": "d744c7f73e57c45f",
+        "type": "inject",
+        "z": "b6241fedd6051f99",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 1720,
+        "wires": [
+            [
+                "04e70ad174801840"
+            ]
+        ]
+    },
+    {
+        "id": "04e70ad174801840",
+        "type": "postgresql",
+        "z": "b6241fedd6051f99",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 8;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 430,
+        "y": 1720,
+        "wires": [
+            [
+                "01fb02706aaea952"
+            ]
+        ]
+    },
+    {
+        "id": "01fb02706aaea952",
+        "type": "ui_table",
+        "z": "b6241fedd6051f99",
+        "group": "f253b8dc0dc72b7d",
+        "name": "KY-020 Sensor de Inclinación",
+        "order": 6,
+        "width": "25",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 660,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "0a0564cbe02af795",
+        "type": "ui_text",
+        "z": "b6241fedd6051f99",
+        "group": "f253b8dc0dc72b7d",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "KY-020 Sensor de Inclinación",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 620,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "bd9104ebacc396ce",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "localhost",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "aiot",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": 10,
+        "maxFieldType": "num",
+        "idle": 1000,
+        "idleFieldType": "num",
+        "connectionTimeout": 10000,
+        "connectionTimeoutFieldType": "num",
+        "user": "utng",
+        "userFieldType": "str",
+        "password": "1234",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "56524d612f7fea34",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.137.191",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "1b4b7b5292ca5d77",
+        "type": "ui_group",
+        "name": "Clase 2",
+        "tab": "a295b1f5cc8cb611",
+        "order": 2,
+        "disp": true,
+        "width": "21",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f253b8dc0dc72b7d",
+        "type": "ui_group",
+        "name": "Clase 1",
+        "tab": "43ce6634099e9d80",
+        "order": 1,
+        "disp": true,
+        "width": "22",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a295b1f5cc8cb611",
+        "type": "ui_tab",
+        "name": "CLASE 2",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "43ce6634099e9d80",
+        "type": "ui_tab",
+        "name": "CLASE 1",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]

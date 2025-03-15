@@ -1,0 +1,594 @@
+[
+    {
+        "id": "de6aa8f203818d7e",
+        "type": "tab",
+        "label": "Flow 8",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7156b0c02f608003",
+        "type": "postgresql",
+        "z": "de6aa8f203818d7e",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(35, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 530,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a9d50cd30a2e56ce",
+        "type": "mqtt in",
+        "z": "de6aa8f203818d7e",
+        "name": "",
+        "topic": "blhd/joystick",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "7156b0c02f608003",
+                "a9cdfd097e9f1b96"
+            ]
+        ]
+    },
+    {
+        "id": "3f71efd78c4129e8",
+        "type": "inject",
+        "z": "de6aa8f203818d7e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 220,
+        "wires": [
+            [
+                "f7bc0a005e1d2f07"
+            ]
+        ]
+    },
+    {
+        "id": "f7bc0a005e1d2f07",
+        "type": "postgresql",
+        "z": "de6aa8f203818d7e",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 35;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 410,
+        "y": 220,
+        "wires": [
+            [
+                "81df4f752d93bc28"
+            ]
+        ]
+    },
+    {
+        "id": "81df4f752d93bc28",
+        "type": "ui_table",
+        "z": "de6aa8f203818d7e",
+        "group": "394752e3b467f722",
+        "name": "KY-023  Modulo Joystick  ",
+        "order": 4,
+        "width": "20",
+        "height": "7",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 630,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a9cdfd097e9f1b96",
+        "type": "ui_text",
+        "z": "de6aa8f203818d7e",
+        "group": "394752e3b467f722",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "KY-023  Modulo Joystick  ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 550,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "63271341f6e61aad",
+        "type": "postgresql",
+        "z": "de6aa8f203818d7e",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(36, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 530,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14da0686d007da1d",
+        "type": "mqtt in",
+        "z": "de6aa8f203818d7e",
+        "name": "",
+        "topic": "blhd/cmagnetismo",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 400,
+        "wires": [
+            [
+                "63271341f6e61aad",
+                "ec41dbea646afe3e"
+            ]
+        ]
+    },
+    {
+        "id": "5c5c53ea198f2e2f",
+        "type": "inject",
+        "z": "de6aa8f203818d7e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 480,
+        "wires": [
+            [
+                "75c7653a39d3dd9e"
+            ]
+        ]
+    },
+    {
+        "id": "75c7653a39d3dd9e",
+        "type": "postgresql",
+        "z": "de6aa8f203818d7e",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 36;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 410,
+        "y": 480,
+        "wires": [
+            [
+                "a7594c681e4f2d28"
+            ]
+        ]
+    },
+    {
+        "id": "a7594c681e4f2d28",
+        "type": "ui_table",
+        "z": "de6aa8f203818d7e",
+        "group": "394752e3b467f722",
+        "name": "KY-021  Modulo Mini Interruptor Magnético ",
+        "order": 6,
+        "width": "20",
+        "height": "7",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 680,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "ec41dbea646afe3e",
+        "type": "ui_text",
+        "z": "de6aa8f203818d7e",
+        "group": "394752e3b467f722",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "KY-021  Modulo Mini Interruptor Magnético ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 640,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "68ab223f57c2a357",
+        "type": "postgresql",
+        "z": "de6aa8f203818d7e",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(33, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 590,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db5136ff8a6ec2c3",
+        "type": "mqtt in",
+        "z": "de6aa8f203818d7e",
+        "name": "",
+        "topic": "blhd/sensores/magnetico",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 310,
+        "y": 620,
+        "wires": [
+            [
+                "68ab223f57c2a357",
+                "af7e6838773df032"
+            ]
+        ]
+    },
+    {
+        "id": "8f35261ee28d1785",
+        "type": "inject",
+        "z": "de6aa8f203818d7e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 270,
+        "y": 700,
+        "wires": [
+            [
+                "38a9dc53a4261232"
+            ]
+        ]
+    },
+    {
+        "id": "38a9dc53a4261232",
+        "type": "postgresql",
+        "z": "de6aa8f203818d7e",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 33;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 470,
+        "y": 700,
+        "wires": [
+            [
+                "b86771b4e1d05003"
+            ]
+        ]
+    },
+    {
+        "id": "b86771b4e1d05003",
+        "type": "ui_table",
+        "z": "de6aa8f203818d7e",
+        "group": "394752e3b467f722",
+        "name": "KY-024  Sensor de Campo Magnético  ",
+        "order": 8,
+        "width": "20",
+        "height": "7",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 730,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "af7e6838773df032",
+        "type": "ui_text",
+        "z": "de6aa8f203818d7e",
+        "group": "394752e3b467f722",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "KY-024  Sensor de Campo Magnético  ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 690,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "0602f0e858678e44",
+        "type": "postgresql",
+        "z": "de6aa8f203818d7e",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(34, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 610,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "75a82e2b2e61b182",
+        "type": "mqtt in",
+        "z": "de6aa8f203818d7e",
+        "name": "",
+        "topic": "blhd/sensores/infrarrojos",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 880,
+        "wires": [
+            [
+                "0602f0e858678e44",
+                "7eb174f11fda2996"
+            ]
+        ]
+    },
+    {
+        "id": "1c5e91556df3a5f1",
+        "type": "inject",
+        "z": "de6aa8f203818d7e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 960,
+        "wires": [
+            [
+                "6abe7b07c0a88dc7"
+            ]
+        ]
+    },
+    {
+        "id": "6abe7b07c0a88dc7",
+        "type": "postgresql",
+        "z": "de6aa8f203818d7e",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 34;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 490,
+        "y": 960,
+        "wires": [
+            [
+                "1c12b76ccba8d3a9"
+            ]
+        ]
+    },
+    {
+        "id": "1c12b76ccba8d3a9",
+        "type": "ui_table",
+        "z": "de6aa8f203818d7e",
+        "group": "394752e3b467f722",
+        "name": "KY-022  Modulo Led Infrarrojo Receptor ",
+        "order": 10,
+        "width": "20",
+        "height": "7",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 750,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "7eb174f11fda2996",
+        "type": "ui_text",
+        "z": "de6aa8f203818d7e",
+        "group": "394752e3b467f722",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "KY-022  Modulo Led Infrarrojo Receptor ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 710,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "8bbff426b8a4bcc2",
+        "type": "ui_spacer",
+        "z": "de6aa8f203818d7e",
+        "name": "spacer",
+        "group": "394752e3b467f722",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "63d0492ec1a173cd",
+        "type": "ui_spacer",
+        "z": "de6aa8f203818d7e",
+        "name": "spacer",
+        "group": "394752e3b467f722",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "bd9104ebacc396ce",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "localhost",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "aiot",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": 10,
+        "maxFieldType": "num",
+        "idle": 1000,
+        "idleFieldType": "num",
+        "connectionTimeout": 10000,
+        "connectionTimeoutFieldType": "num",
+        "user": "utng",
+        "userFieldType": "str",
+        "password": "1234",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "56524d612f7fea34",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.137.191",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "394752e3b467f722",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "d80bec45eebe8c4c",
+        "order": 1,
+        "disp": true,
+        "width": "21",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d80bec45eebe8c4c",
+        "type": "ui_tab",
+        "name": "CLASE 6",
+        "icon": "dashboard",
+        "order": 9,
+        "disabled": false,
+        "hidden": false
+    }
+]

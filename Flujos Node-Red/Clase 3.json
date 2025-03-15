@@ -1,0 +1,574 @@
+[
+    {
+        "id": "4242facae8d797de",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "67a5a6356cf0c1e5",
+        "type": "postgresql",
+        "z": "4242facae8d797de",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(20, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 510,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c4a825b73acaf6f",
+        "type": "mqtt in",
+        "z": "4242facae8d797de",
+        "name": "",
+        "topic": "blhd/sensor/magnetico",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 100,
+        "wires": [
+            [
+                "67a5a6356cf0c1e5",
+                "9d73eaf896e4754b"
+            ]
+        ]
+    },
+    {
+        "id": "5a2fb161794f2bb6",
+        "type": "inject",
+        "z": "4242facae8d797de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 180,
+        "wires": [
+            [
+                "e8b65d0d4850505f"
+            ]
+        ]
+    },
+    {
+        "id": "e8b65d0d4850505f",
+        "type": "postgresql",
+        "z": "4242facae8d797de",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 20;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 390,
+        "y": 180,
+        "wires": [
+            [
+                "d282873fa51e9908"
+            ]
+        ]
+    },
+    {
+        "id": "d282873fa51e9908",
+        "type": "ui_table",
+        "z": "4242facae8d797de",
+        "group": "9f3748ba6f271955",
+        "name": "Sensor Manetico",
+        "order": 2,
+        "width": "25",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 630,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9d73eaf896e4754b",
+        "type": "ui_text",
+        "z": "4242facae8d797de",
+        "group": "9f3748ba6f271955",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "SENSOR HALL",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 580,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "f00204a74f469598",
+        "type": "postgresql",
+        "z": "4242facae8d797de",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(21, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 590,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "375006473c9d00fe",
+        "type": "mqtt in",
+        "z": "4242facae8d797de",
+        "name": "",
+        "topic": "blhd/sensor/ir",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 310,
+        "y": 460,
+        "wires": [
+            [
+                "f00204a74f469598",
+                "fb57b0799f964570"
+            ]
+        ]
+    },
+    {
+        "id": "a4d8c371ffe66134",
+        "type": "inject",
+        "z": "4242facae8d797de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 540,
+        "wires": [
+            [
+                "08bbbc26159d72d6"
+            ]
+        ]
+    },
+    {
+        "id": "08bbbc26159d72d6",
+        "type": "postgresql",
+        "z": "4242facae8d797de",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 21;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 470,
+        "y": 540,
+        "wires": [
+            [
+                "f99894c4bc4b5ac2"
+            ]
+        ]
+    },
+    {
+        "id": "f99894c4bc4b5ac2",
+        "type": "ui_table",
+        "z": "4242facae8d797de",
+        "group": "9f3748ba6f271955",
+        "name": "Sensor Ir",
+        "order": 4,
+        "width": "25",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 680,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "fb57b0799f964570",
+        "type": "ui_text",
+        "z": "4242facae8d797de",
+        "group": "9f3748ba6f271955",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "SESNSOR IR",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 660,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "65dc9b236f129b48",
+        "type": "postgresql",
+        "z": "4242facae8d797de",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(23, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 590,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7eca43a34c710748",
+        "type": "mqtt in",
+        "z": "4242facae8d797de",
+        "name": "",
+        "topic": "blhd/actuador/buzzer",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 340,
+        "y": 700,
+        "wires": [
+            [
+                "65dc9b236f129b48",
+                "8467a0159c4cd148"
+            ]
+        ]
+    },
+    {
+        "id": "15d3dfb88164ac4f",
+        "type": "inject",
+        "z": "4242facae8d797de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 780,
+        "wires": [
+            [
+                "b6563e11264d4719"
+            ]
+        ]
+    },
+    {
+        "id": "b6563e11264d4719",
+        "type": "postgresql",
+        "z": "4242facae8d797de",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 23;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 510,
+        "y": 780,
+        "wires": [
+            [
+                "f4c9b1405b0fb787"
+            ]
+        ]
+    },
+    {
+        "id": "f4c9b1405b0fb787",
+        "type": "ui_table",
+        "z": "4242facae8d797de",
+        "group": "9f3748ba6f271955",
+        "name": "SESNSOR SONIDO ACTIVO",
+        "order": 6,
+        "width": "25",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 740,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "8467a0159c4cd148",
+        "type": "ui_text",
+        "z": "4242facae8d797de",
+        "group": "9f3748ba6f271955",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "SESNSOR SONIDO ACTIVO",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 700,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "16456346a3578c1f",
+        "type": "postgresql",
+        "z": "4242facae8d797de",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(22, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 570,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6dc54020de79f841",
+        "type": "mqtt in",
+        "z": "4242facae8d797de",
+        "name": "",
+        "topic": "blhd/actuador/buzzer/pass",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 980,
+        "wires": [
+            [
+                "16456346a3578c1f",
+                "11e2220738d8fd8f"
+            ]
+        ]
+    },
+    {
+        "id": "db405123184ccfbd",
+        "type": "inject",
+        "z": "4242facae8d797de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 1060,
+        "wires": [
+            [
+                "9fc55ec5202b66cf"
+            ]
+        ]
+    },
+    {
+        "id": "9fc55ec5202b66cf",
+        "type": "postgresql",
+        "z": "4242facae8d797de",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 22;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 490,
+        "y": 1060,
+        "wires": [
+            [
+                "b5f3ead71b0ba4ae"
+            ]
+        ]
+    },
+    {
+        "id": "b5f3ead71b0ba4ae",
+        "type": "ui_table",
+        "z": "4242facae8d797de",
+        "group": "9f3748ba6f271955",
+        "name": "SESNSOR SONIDO PASIVO",
+        "order": 8,
+        "width": "25",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 720,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "11e2220738d8fd8f",
+        "type": "ui_text",
+        "z": "4242facae8d797de",
+        "group": "9f3748ba6f271955",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "SESNSOR SONIDO PASIVO",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 680,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "bd9104ebacc396ce",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "localhost",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "aiot",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": 10,
+        "maxFieldType": "num",
+        "idle": 1000,
+        "idleFieldType": "num",
+        "connectionTimeout": 10000,
+        "connectionTimeoutFieldType": "num",
+        "user": "utng",
+        "userFieldType": "str",
+        "password": "1234",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "56524d612f7fea34",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.137.191",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "9f3748ba6f271955",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "4ecc3d3b91af9ca6",
+        "order": 1,
+        "disp": true,
+        "width": "25",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4ecc3d3b91af9ca6",
+        "type": "ui_tab",
+        "name": "Clase 4",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    }
+]

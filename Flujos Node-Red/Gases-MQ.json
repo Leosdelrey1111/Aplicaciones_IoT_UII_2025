@@ -1,0 +1,940 @@
+[
+    {
+        "id": "f413409e1fbc0583",
+        "type": "tab",
+        "label": "Flow 7",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2e502ddf578f91bb",
+        "type": "postgresql",
+        "z": "f413409e1fbc0583",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(28, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 510,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9e8153e7c4908586",
+        "type": "mqtt in",
+        "z": "f413409e1fbc0583",
+        "name": "",
+        "topic": "blhd/sensor/gasmq2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 180,
+        "wires": [
+            [
+                "2e502ddf578f91bb",
+                "8df81dd75191269f"
+            ]
+        ]
+    },
+    {
+        "id": "21be03629f1b547c",
+        "type": "inject",
+        "z": "f413409e1fbc0583",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 260,
+        "wires": [
+            [
+                "4a392f63fc608e87"
+            ]
+        ]
+    },
+    {
+        "id": "4a392f63fc608e87",
+        "type": "postgresql",
+        "z": "f413409e1fbc0583",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 28;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 430,
+        "y": 260,
+        "wires": [
+            [
+                "fc0839c29bff3d5a"
+            ]
+        ]
+    },
+    {
+        "id": "fc0839c29bff3d5a",
+        "type": "ui_table",
+        "z": "f413409e1fbc0583",
+        "group": "5f175b3fc9d31b76",
+        "name": "MQ-2 Sensor de Gas ",
+        "order": 2,
+        "width": "25",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 640,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8df81dd75191269f",
+        "type": "ui_text",
+        "z": "f413409e1fbc0583",
+        "group": "5f175b3fc9d31b76",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "MQ-2 Sensor de Gas ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 600,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "742da24f875e28ee",
+        "type": "postgresql",
+        "z": "f413409e1fbc0583",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(30, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 630,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bdadebabe5975ee3",
+        "type": "mqtt in",
+        "z": "f413409e1fbc0583",
+        "name": "",
+        "topic": "blhd/sensor/gasMQ4",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 370,
+        "y": 460,
+        "wires": [
+            [
+                "742da24f875e28ee",
+                "6ac4c44a15e645ce"
+            ]
+        ]
+    },
+    {
+        "id": "42ee9f17b8c52daa",
+        "type": "inject",
+        "z": "f413409e1fbc0583",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 350,
+        "y": 540,
+        "wires": [
+            [
+                "73a6a6f2444ced21"
+            ]
+        ]
+    },
+    {
+        "id": "73a6a6f2444ced21",
+        "type": "postgresql",
+        "z": "f413409e1fbc0583",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 30;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 550,
+        "y": 540,
+        "wires": [
+            [
+                "c18ed7736fea7738"
+            ]
+        ]
+    },
+    {
+        "id": "c18ed7736fea7738",
+        "type": "ui_table",
+        "z": "f413409e1fbc0583",
+        "group": "5f175b3fc9d31b76",
+        "name": "MQ-4 Sensor de Gas ",
+        "order": 4,
+        "width": "25",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 760,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "6ac4c44a15e645ce",
+        "type": "ui_text",
+        "z": "f413409e1fbc0583",
+        "group": "5f175b3fc9d31b76",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "MQ-4 Sensor de Gas ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 720,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "6544508cc4948cd2",
+        "type": "postgresql",
+        "z": "f413409e1fbc0583",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(32, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 670,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e5c279c93dfaf3a8",
+        "type": "mqtt in",
+        "z": "f413409e1fbc0583",
+        "name": "",
+        "topic": "blhd/sensor/gas_MQ5",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 420,
+        "y": 700,
+        "wires": [
+            [
+                "6544508cc4948cd2",
+                "0c3c5db1d24697ed"
+            ]
+        ]
+    },
+    {
+        "id": "87844aaf748b824d",
+        "type": "inject",
+        "z": "f413409e1fbc0583",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 390,
+        "y": 780,
+        "wires": [
+            [
+                "bcf4868f32d34dae"
+            ]
+        ]
+    },
+    {
+        "id": "bcf4868f32d34dae",
+        "type": "postgresql",
+        "z": "f413409e1fbc0583",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 32;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 590,
+        "y": 780,
+        "wires": [
+            [
+                "598c225c1cff3ac4"
+            ]
+        ]
+    },
+    {
+        "id": "598c225c1cff3ac4",
+        "type": "ui_table",
+        "z": "f413409e1fbc0583",
+        "group": "5f175b3fc9d31b76",
+        "name": "MQ-5 (LPG, Metano, Butano, Hidrógeno)",
+        "order": 6,
+        "width": "25",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 860,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "0c3c5db1d24697ed",
+        "type": "ui_text",
+        "z": "f413409e1fbc0583",
+        "group": "5f175b3fc9d31b76",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "MQ-5 (LPG, Metano, Butano, Hidrógeno)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 820,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "83f15336ac1b7499",
+        "type": "postgresql",
+        "z": "f413409e1fbc0583",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(31, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 670,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "53860324c766e86b",
+        "type": "mqtt in",
+        "z": "f413409e1fbc0583",
+        "name": "",
+        "topic": "blhd/sensor/gasMQ6",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 410,
+        "y": 1040,
+        "wires": [
+            [
+                "83f15336ac1b7499",
+                "568d78bf60455969"
+            ]
+        ]
+    },
+    {
+        "id": "0c5e0f7c8cf13852",
+        "type": "inject",
+        "z": "f413409e1fbc0583",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 390,
+        "y": 1120,
+        "wires": [
+            [
+                "b0174b2e85740c62"
+            ]
+        ]
+    },
+    {
+        "id": "b0174b2e85740c62",
+        "type": "postgresql",
+        "z": "f413409e1fbc0583",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 31;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 590,
+        "y": 1120,
+        "wires": [
+            [
+                "fb3b67382afeeeb3"
+            ]
+        ]
+    },
+    {
+        "id": "fb3b67382afeeeb3",
+        "type": "ui_table",
+        "z": "f413409e1fbc0583",
+        "group": "5f175b3fc9d31b76",
+        "name": "MQ-6 (LPG - Gas Licuado de Petróleo) ",
+        "order": 8,
+        "width": "25",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 850,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "568d78bf60455969",
+        "type": "ui_text",
+        "z": "f413409e1fbc0583",
+        "group": "5f175b3fc9d31b76",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "MQ-6 (LPG - Gas Licuado de Petróleo) ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 810,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "79ecf805d2cf86cb",
+        "type": "postgresql",
+        "z": "f413409e1fbc0583",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(4, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 570,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d06152d6ab5fdc9b",
+        "type": "mqtt in",
+        "z": "f413409e1fbc0583",
+        "name": "",
+        "topic": "blhd/sensores/mq7",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 310,
+        "y": 1320,
+        "wires": [
+            [
+                "79ecf805d2cf86cb",
+                "f063031efa3dd398"
+            ]
+        ]
+    },
+    {
+        "id": "958f6d312c3dab06",
+        "type": "inject",
+        "z": "f413409e1fbc0583",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 1400,
+        "wires": [
+            [
+                "0e37a60a323bcb8a"
+            ]
+        ]
+    },
+    {
+        "id": "0e37a60a323bcb8a",
+        "type": "postgresql",
+        "z": "f413409e1fbc0583",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 4;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 490,
+        "y": 1400,
+        "wires": [
+            [
+                "0f6a789bdce1b002"
+            ]
+        ]
+    },
+    {
+        "id": "0f6a789bdce1b002",
+        "type": "ui_table",
+        "z": "f413409e1fbc0583",
+        "group": "5f175b3fc9d31b76",
+        "name": "MQ-7    Monoxido (CO) ",
+        "order": 10,
+        "width": "25",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 700,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "f063031efa3dd398",
+        "type": "ui_text",
+        "z": "f413409e1fbc0583",
+        "group": "5f175b3fc9d31b76",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "MQ-7    Monoxido (CO) ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 660,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "d698456573c69118",
+        "type": "postgresql",
+        "z": "f413409e1fbc0583",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(45, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 590,
+        "y": 1560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "19ac64f0fe86ee7a",
+        "type": "mqtt in",
+        "z": "f413409e1fbc0583",
+        "name": "",
+        "topic": "blhd/sensor/mq135",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 1560,
+        "wires": [
+            [
+                "d698456573c69118",
+                "c5a73f901a259189"
+            ]
+        ]
+    },
+    {
+        "id": "46229c429ed66207",
+        "type": "inject",
+        "z": "f413409e1fbc0583",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 1640,
+        "wires": [
+            [
+                "cc25573b9142bd9d"
+            ]
+        ]
+    },
+    {
+        "id": "cc25573b9142bd9d",
+        "type": "postgresql",
+        "z": "f413409e1fbc0583",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 45;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 510,
+        "y": 1640,
+        "wires": [
+            [
+                "97a4bc213d3ab253"
+            ]
+        ]
+    },
+    {
+        "id": "97a4bc213d3ab253",
+        "type": "ui_table",
+        "z": "f413409e1fbc0583",
+        "group": "5f175b3fc9d31b76",
+        "name": "MQ-135 Gases tóxicos",
+        "order": 12,
+        "width": "25",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 720,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "c5a73f901a259189",
+        "type": "ui_text",
+        "z": "f413409e1fbc0583",
+        "group": "5f175b3fc9d31b76",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "MQ-135 Gases tóxicos",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 680,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "f865f9e2deb3610c",
+        "type": "postgresql",
+        "z": "f413409e1fbc0583",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(44, 1,'{{{msg.payload}}}');",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 590,
+        "y": 1780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ad18939674a8fd57",
+        "type": "mqtt in",
+        "z": "f413409e1fbc0583",
+        "name": "",
+        "topic": "blhd/sensores/mq9",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56524d612f7fea34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 1780,
+        "wires": [
+            [
+                "f865f9e2deb3610c",
+                "4477f438d1247b62"
+            ]
+        ]
+    },
+    {
+        "id": "856422871ddf788d",
+        "type": "inject",
+        "z": "f413409e1fbc0583",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 1860,
+        "wires": [
+            [
+                "5c75d2dd68de4147"
+            ]
+        ]
+    },
+    {
+        "id": "5c75d2dd68de4147",
+        "type": "postgresql",
+        "z": "f413409e1fbc0583",
+        "name": "Postgresql",
+        "query": "SELECT * FROM sensor_details WHERE sensor_id = 44;",
+        "postgreSQLConfig": "bd9104ebacc396ce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 510,
+        "y": 1860,
+        "wires": [
+            [
+                "c74aa7e0e6d7df3a"
+            ]
+        ]
+    },
+    {
+        "id": "c74aa7e0e6d7df3a",
+        "type": "ui_table",
+        "z": "f413409e1fbc0583",
+        "group": "5f175b3fc9d31b76",
+        "name": "MQ-9    Mo de carbono Gases(CO)  ",
+        "order": 14,
+        "width": "25",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 760,
+        "y": 1860,
+        "wires": []
+    },
+    {
+        "id": "4477f438d1247b62",
+        "type": "ui_text",
+        "z": "f413409e1fbc0583",
+        "group": "5f175b3fc9d31b76",
+        "order": 13,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "MQ-9    Mo de carbono Gases(CO)  ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 720,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "bd9104ebacc396ce",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "localhost",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "aiot",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": 10,
+        "maxFieldType": "num",
+        "idle": 1000,
+        "idleFieldType": "num",
+        "connectionTimeout": 10000,
+        "connectionTimeoutFieldType": "num",
+        "user": "utng",
+        "userFieldType": "str",
+        "password": "1234",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "56524d612f7fea34",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.137.191",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "5f175b3fc9d31b76",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "1abd036ccbd8bcf8",
+        "order": 1,
+        "disp": true,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1abd036ccbd8bcf8",
+        "type": "ui_tab",
+        "name": "GAS",
+        "icon": "dashboard",
+        "order": 8,
+        "disabled": false,
+        "hidden": false
+    }
+]
