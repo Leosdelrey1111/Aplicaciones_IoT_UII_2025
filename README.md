@@ -12,7 +12,7 @@
 ---
 
 ## 📖 Descripción
-Este repositorio contiene la documentación y el código de los ejercicios desarrollados en el curso *NetAcad JavaScript Essentials 2, aplicando tecnologías IoT con **Raspberry Pi, **Node-RED, **PostgreSQL, y **Mosquitto MQTT*.
+Este repositorio contiene la documentación y el código de los ejercicios desarrollados estan subidas las carpetas en gitHub de este repositorio y la calificacion de los examenes de *NetAcad JavaScript Essentials 2, aplicando tecnologías IoT con **Raspberry Pi, **Node-RED, **PostgreSQL, y **Mosquitto MQTT*.
 
 ---
 
